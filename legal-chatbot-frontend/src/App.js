@@ -34,13 +34,19 @@ function App() {
     <div className="chat-container">
       <h1>Legal Chatbot</h1>
       <div className="chat-box">
-        {chat.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>
-            <ReactMarkdown>{msg.text}</ReactMarkdown>
-          </div>
-        ))}
-        {loading && <div className="typing-indicator">Typing...</div>} {/* Show typing indicator */}
-      </div>
+  {chat.length === 0 && !loading && (
+    <div className="welcome-message">
+       Welcome! Ask me a legal question to get started.
+    </div>
+  )}
+  {chat.map((msg, index) => (
+    <div key={index} className={`message ${msg.sender}`}>
+      <ReactMarkdown>{msg.text}</ReactMarkdown>
+    </div>
+  ))}
+  {loading && <div className="typing-indicator">Typing...</div>}
+</div>
+
       <div className="input-box">
         <input
           type="text"
