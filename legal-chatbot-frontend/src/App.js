@@ -30,8 +30,9 @@ function App() {
   };
 
   return (
+  <>
     <div className="chat-container">
-      <h1>🧑‍⚖️ Legal Chatbot</h1>
+      <h1>Legal Chatbot</h1>
       <div className="chat-box">
         {chat.map((msg, index) => (
           <div key={index} className={`message ${msg.sender}`}>
@@ -52,6 +53,7 @@ function App() {
         </button>
       </div>
     </div>
+  </>
   );
 }
 

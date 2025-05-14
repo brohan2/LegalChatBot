@@ -58,7 +58,7 @@ app.post("/chat", async (req, res) => {
         }
 
         // 📝 Enhance the prompt
-        const enhancedPrompt = `You are a legal advisory chatbot for the Indian Constitution. Answer in a professional and informative way. This is knowledge text and use it if required: \n\n${knowledgeText} \n\nUser's question: ${prompt}`;
+        const enhancedPrompt = `You are a legal advisory chatbot for the Indian legal world and will not answer any other questions out of the scope of legal give a message unable to answer that's it. Answer in a professional, Crisp and informative way and all this is for your context not to mention any of this in answer (this prompt is in backend so understand).  This is knowledge text and use it if required: \n\n${knowledgeText} \n\nUser's question: ${prompt}`;
 
         // 🧠 Get response from AI
         const response = await axios.post(OLLAMA_URL, {
